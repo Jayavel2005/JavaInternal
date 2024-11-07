@@ -1,34 +1,53 @@
 import java.util.Scanner;
 
 public class Strings {
+
     public static void main(String[] args) {
-
-
+        // Palindrome String
         Scanner scanner = new Scanner(System.in);
-        // String creation using litetrals
-        String myName = "Jayavel";
-        System.out.println(myName);
 
-        // String creation using new keyword
-        String myName1 = new String("Jayavel");
-        System.out.println(myName1);
-
-        System.out.print("Enter the Word: ");
         String word = scanner.nextLine();
-        // Finding length
-        System.out.println(word.length());
-        // Finding Any Char using index
-        System.out.println(word.charAt(0));
+
+        word.replaceAll("[^a-zA-Z]", "");
+
+        // String reversed = "";
+        // for(int i = word.length() - 1; i >=0 ;i--  ){
+        //     reversed += word.charAt(i);
+        // }
+        // if(word.equals(reversed)){
+        //     System.out.println("Palindrome");
+        // }
+        // else{
+        //     System.out.println("Not Palindrome");
+        // }
+
+
+        if (isPalindrome(word)){
+            System.out.println("palindrome");
+        }
+        else{
+            System.out.println("Not palindrome");
+        }
+
+
         
-        System.out.println(word.toUpperCase());
-        System.out.println(word.toLowerCase());
+        
+    }
 
-        // Compare Two Strings
+    public static boolean isPalindrome(String word){
+        int start = 0;
+        int end = word.length() - 1;
 
-        String word1 = new String("Jaavel");
-        String word2 = new String("Jaavel");
-        System.out.println(word1.equalsIgnoreCase(word2));
+        while (start<=end) {
 
+            if(word.charAt(start) != (word.charAt(end))){
+                return false;
+            }
+            start++;
+            end--;
+            
+        }
+        return true;
 
     }
 }
