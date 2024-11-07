@@ -28,6 +28,7 @@ public class Strings {
         else{
             System.out.println("Not palindrome");
         }
+        scanner.close();
 
 
         
