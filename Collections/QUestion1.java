@@ -26,7 +26,9 @@ public class QUestion1 {
                     break;
                 
                 default:
-                    break;
+                    System.out.println("Exiting........");
+                    return;
+    
     
     
                 
@@ -36,18 +38,27 @@ public class QUestion1 {
     public static ArrayList<String> addElement(String addEl, ArrayList<String> myList){      
 
             myList.add(addEl);
-            return myList;
+    
 
         
     }
     public static ArrayList<String> removeElement(String removeEl, ArrayList<String> myList){      
 
-       myList.remove(removeEl);
-        return myList;
+        if(myList.contains(removeEl)){
+            myList.remove(removeEl);
+            
+        }
+        else{
+            System.out.println(removeEl + " not found in the list.");
+        }
     }
     public static void display(ArrayList<String> myList){
-        for(String word : myList){
-            System.out.println(word);
+        if(myList.isEmpty()){
+            System.out.println("The list is empty.");
+        }else{
+            for(String word : myList){
+                System.out.println(word);
+            }
         }
     }
     
