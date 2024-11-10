@@ -1,1 +1,1 @@
-reCase(word2));
+word2
