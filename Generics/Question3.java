@@ -1,31 +1,33 @@
-// package JavaInternal.Generics;
 interface Pair<K,V>{
-    K getValue();
-    V getKey(); 
+    K getKey();
+    V getValue();
 }
 
-class OrderedPair<K,V> implements Pair<K,V>{
-    private K key;
-    private V value;
 
-    public OrderedPair(K key, V value) {
-        this.key = key;
-        this.value = value;
+class OrderPair<K, V> implements Pair<K,V>{
+    K k;
+    V v;
+
+    OrderPair(K k,V v){
+        this.k = k;
+        this.v = v;
     }
 
-    public K getValue(){
-        return key;
-    };
+    public K getKey(){
+        return k;
+    }
 
-    public V getKey(){
-        return value;
-    };
+    public V getValue(){
+        return v;
+    }
 }
-public class Question3 {
 
+
+public class Question3 {
     public static void main(String[] args) {
-        Pair<Integer, String> pair = new OrderedPair(56, "befsgw");
+        Pair<String, Integer> pair = new OrderPair("de", 45);
         System.out.println(pair.getKey());
+        System.out.println(pair.getValue());
     }
     
 }
